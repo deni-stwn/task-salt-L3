@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Aplikasi menentukan ganjil genap 1-100 dan fibonacci</h2>
+
+    <label for="inputan">Masukan bilangan : </label>
+    <input type="number" class="input" id="inputan">
+
+    <button id="btn">tampilkan</button>
+
+    <div style="display: flex;">
+        <ul id="ganjil">
+            <span>bilangan ganjil</span>
+        </ul>
+        <ul id="genap">
+            <span>bilangan genap</span>
+        </ul>
+        <ul id="fibo">
+            <span>fibonacci</span>
+        </ul>
+    </div>
+    <!-- <p>1 2 3</p> -->
+    <script>
+        const btn = document.getElementById('btn')
+        const ganjil = document.getElementById('ganjil')
+        const genap = document.getElementById('genap')
+
+        btn.addEventListener('click', function() {
+            const input = document.getElementById('inputan').value
+
+            if (input < 1 || input > 100){
+                alert("masukan angka 1-100")
+                return
+            }
+
+            for (let i = 1; i <= input ; i++){
+                if (i % 2 == 1){
+                    ganjil.innerHTML += `<li>${i}</li>` 
+                }else {
+                    genap.innerHTML += `<li>${i}</li>`
+                }
+            }
+
+            // fibo
+            let a = 0, b = 1, c = 0;
+            let fibo = document.getElementById('fibo')
+
+            while(c <= input) {
+                fibo.innerHTML += `<li>${c}</li>`
+                a = b
+                b = c
+                c = a + b
+                // keterangan
+                // fibo dimulai dari angka 1
+                /*
+                jika a = 0 
+                maka b = 1
+                dan c = 0
+                
+                jadi , 
+                    0 = 1
+                    1 = 0 
+                    0 = 0 + 1 result 1
+
+                    diulang lagi
+                    0 = 1
+                    1 = 1
+                    1 = 0 + 1 result 1
+                    
+                    diulang lagi
+                    1 = 1
+                    1 = 1
+                    1 = 1 + 1 result 2
+
+                */
+            }
+        })
+    </script>
+</body>
+</html>
