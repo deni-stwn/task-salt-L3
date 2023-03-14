@@ -40,27 +40,58 @@
             }
 
             for (let i = 1; i <= input ; i++){
+
+                // jika i sisa bagi 2 = 1 maka ganjil
+                // contoh 3 % 2 = 1 
+                // maka 3 adalah ganjil 
                 if (i % 2 == 1){
-                    ganjil.innerHTML += `<li>${i}</li>` 
+                    ganjil.innerHTML += `<li>${i}</li>`
+
+                // i sisa bagi 2 = 0 maka genap
+                // contoh 4 % 2 = 0
+                // maka 4 adalah genap
                 }else {
                     genap.innerHTML += `<li>${i}</li>`
                 }
             }
 
             // fibo
-            let a = 0, b = 1, c = 0;
+            let a = 0, b = 1, c = 0 ;
             let fibo = document.getElementById('fibo')
 
             while(c <= input) {
                 fibo.innerHTML += `<li>${c}</li>`
                 a = b
                 b = c
-                c = a + b
+                c = a + b // hasil dari penjumlahan masuk ke a dan c
                 
                 // keterangan
-                // fibo dimulai dari angka 1
+                // fibo dimulai dari angka 1 , 1 angka sebelmnya 0
                 /*
-                menjumlahkan angka sebelumnya dan sebelumnya lagi 
+                jika a = 0 
+                    b = 1
+                    c = 0
+                
+                maka , 
+                    0 = 1
+                    1 = 0 
+                    0 = 0 + 1 result 1
+                    ouput = 0 1
+
+                    diulang lagi
+                    0 = 1
+                    1 = 1
+                    1 = 0 + 1 result 1
+                    ouput = 0 1 1
+
+                    diulang lagi
+                    1 = 1
+                    1 = 1
+                    1 = 1 + 1 result 2
+                    ouput = 0 1 1 2
+                    danseterunya ...
+                    
+                
                 */
             }
         })
